@@ -1,6 +1,7 @@
 require_relative "boot"
 
 require "rails/all"
+require 'dotenv'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -8,7 +9,7 @@ Bundler.require(*Rails.groups)
 
 puts 'Loading Config - Application'
 
-$config = YAML.load(File.read('../../config/b4s3/api/configuration.yml')).with_indifferent_access
+Dotenv.load(File.expand_path('../../.env', __dir__))
 
 module Api
   class Application < Rails::Application
