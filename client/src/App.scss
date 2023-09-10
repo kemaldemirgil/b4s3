@@ -1,0 +1,131 @@
+// Variables
+$base-font-size: 16px;
+$base-line-height: 1.5;
+$base-font-family: monospace;
+$primary-color: white;
+$link-color: $primary-color;
+$matrix-font-url: url("fonts/matrix code nfi.ttf");
+
+// Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  font-family: $base-font-family;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+html {
+  font-size: $base-font-size;
+}
+
+.app {
+  min-height: 100vh;
+  color: $primary-color;
+  padding: 20px;
+  font-size: 24px;
+}
+
+@font-face {
+  font-family: "MatrixFont";
+  src: $matrix-font-url format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.matrix-link {
+  font-family: "MatrixFont", sans-serif;
+  color: $link-color;
+  text-decoration: none;
+}
+
+.whoami-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  margin: 0;
+}
+
+.whoami {
+  animation: flickFont 1s linear infinite, shake 0.2s linear infinite;
+
+  &:hover {
+    color: #00ff2b;
+  }
+}
+
+@keyframes flickFont {
+  0%,
+  38% {
+    font-family: $base-font-family;
+  }
+  100% {
+    font-family: "MatrixFont", sans-serif;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateY(-4px);
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(-4px);
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+    transform: translateY(4px);
+  }
+  75% {
+    transform: translateY(-4px);
+    transform: translateX(-4px);
+  }
+}
